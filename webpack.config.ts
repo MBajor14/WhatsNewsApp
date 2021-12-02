@@ -4,30 +4,34 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, "./src/index.js"),
+  entry: path.resolve(__dirname, "./src/index.tsx"),
   module: {
     rules : [
       {
-          test: /\.(js|jsx)?$/,
-          exclude: /node_modules/,
-          use: [{ loader: 'babel-loader' }]
+        test: /\.(js|jsx)?$/,
+        exclude: /node_modules/,
+        use: [{ loader: 'babel-loader' }]
       },
       {
-          test: /\.html$/,
-          use: [{ loader: 'html-loader' }]
+        test: /\.html$/,
+        use: [{ loader: 'html-loader' }]
       },
       {
-          test: /\.css$/, 
-          use: [ 'style-loader', 'css-loader' ]
+        test: /\.css$/, 
+        use: [ 'style-loader', 'css-loader' ]
       },
       {
-          test: /\.(png|jpe?g|gif)$/i,
-          use: [{ loader: 'file-loader' }],
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [{ loader: 'file-loader' }],
+      },
+      { 
+        test: /\.tsx?$/, 
+        use: [{ loader: 'ts-loader' }]
       },
     ]
   },
   resolve: {
-    extensions: ["*", ".js", ".jsx"],
+    extensions: ["*", ".js", ".jsx", ".ts", ".tsx"],
   },
   output: {
     path: path.resolve(__dirname, "./dist"),
