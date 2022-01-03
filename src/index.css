@@ -1,0 +1,53 @@
+*, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(92, 92, 92);
+}
+
+#App {
+    /* margin: 1rem 1.5rem; */
+}
+
+.news-article {
+    border: 1px solid black;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    border-radius: 4px;
+}
+
+.article-img {
+    width: 15rem;
+    margin-right: 1rem;
+}
+
+.article-title {
+    color: white;
+}
+
+.article-content {
+    color: rgb(184, 184, 184);
+    padding-left: 1.2rem;
+}
+
+.article-content-author {
+    font-style: italic;
+}
+
+.header {
+    /* background-color: rgb(175, 175, 175); */
+    color: rgb(255, 250, 180);
+    margin: 1rem 1.5rem;
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}

@@ -13,6 +13,6 @@ export default class WeatherApiKit {
     }
 
     static getDailyForecast(city: string, days: number): Observable<any> {
-        return this.get(`${BASE_URL}/daily?q=${city}&cnt=${days}&appid=${API_KEY}`);
+        return this.get(`${BASE_URL}/forecast/daily?q=${city}&cnt=${days}&appid=${API_KEY}`);
     }
 }

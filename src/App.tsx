@@ -1,27 +1,54 @@
-import React, { Component } from 'react';
-import { Subject, BehaviorSubject, Observable, of, from } from 'rxjs';
+import { Component } from 'react';
 import WeatherApiKit from './libs/weatherApiKit';
+import Articles from './components/Articles';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
-class App extends Component {
+interface myState { 
+    WeatherData: any,
+    WeatherData2: any,
+    NewsData: any,
+    NewsData2: any
+};
+
+class App extends Component<{}, myState> {
     constructor(props){
         super(props);
-        this.state = {  };
+        this.state = { 
+            WeatherData: null,
+            WeatherData2: null,
+            NewsData: null,
+            NewsData2: null
+        };
     }
 
-    componentDidMount() {
-        let currentWeather$ = WeatherApiKit.getCurrentWeather('Staten Island');
-        currentWeather$.subscribe(weatherData => {
+    componentDidMount(): void {  }
 
-            weatherData.then(console.log);
-        });
+    getCurrentWeather(): void {
+        // let currentWeather$ = WeatherApiKit.getCurrentWeather('Staten Island');
+        // currentWeather$.subscribe(d => {
+        //     d.then(WeatherData => {
+        //         console.log(WeatherData);
+        //         this.setState({ WeatherData });
+        //     });
+        // });
 
-        console.log('process.env',process.env);
+        // let currentWeather2$ = WeatherApiKit.getCurrentWeather('Staten Island');
+        // currentWeather2$.subscribe(d => {
+        //     d.then(WeatherData2 => {
+        //         // console.log(WeatherData2);
+        //         this.setState({ WeatherData2 });
+        //     });
+        // });
     }
 
-    render() {
+    render(): JSX.Element {
         return (
-            <div>
-                <h4>Whats News</h4>
+            <div id="App">
+                <div className="header">
+                    <h4>Whats News</h4>
+                </div>
+                <Articles />
             </div>
         );
     }
