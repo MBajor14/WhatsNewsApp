@@ -1,7 +1,5 @@
 import react, { Component } from 'react';
-import { switchMap } from 'rxjs';
 import ArticleThread from '../components/ArticleThread';
-import NewsApiKit from '../libs/newsApiKit';
 
 interface ArticlesState {
     newsData: any;
